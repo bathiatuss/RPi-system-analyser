@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# System Analyser - Pi-Apps Uninstall Script
+# This script removes System Analyser from the system
+
+APP_NAME="system-analyser"
+
+echo "Uninstalling System Analyser..."
+
+# Remove the package using dpkg
+sudo apt-get remove -y "$APP_NAME" || error "Failed to uninstall $APP_NAME"
+
+# Note: We do NOT remove user data/logs (~/.local/share/system-analyser/)
+# as per Pi-Apps policy to preserve user configuration and data
+
+echo "System Analyser uninstalled successfully!"
+echo "Note: Your logs and data in ~/.local/share/system-analyser/ have been preserved."

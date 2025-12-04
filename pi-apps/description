@@ -1,0 +1,27 @@
+A lightweight GTK3-based real-time system monitoring application specifically designed for Raspberry Pi.
+
+System Analyser provides comprehensive system metrics monitoring with a clean, native interface. It displays CPU usage, temperature, memory, and other vital system statistics in real-time, perfect for keeping an eye on your Raspberry Pi's performance.
+
+Key Features:
+• Real-time CPU usage and temperature monitoring
+• Memory and swap usage tracking
+• System uptime and load average display
+• CPU clock speed and voltage monitoring
+• Data logging to CSV files for analysis
+• Native GTK3 interface that integrates with your desktop
+• Lightweight and efficient resource usage
+
+Perfect for:
+• Monitoring system performance during heavy tasks
+• Tracking temperature to prevent thermal throttling
+• Analyzing system behavior over time with CSV logs
+• Learning about system resource management
+• Keeping tabs on your Pi's health
+
+How to Use:
+After installation, launch "System Analyser" from your application menu under System or Monitor categories. The main window will display real-time metrics. Data is automatically logged to ~/.local/share/system-analyser/system_metrics.csv for later analysis.
+
+The application is optimized for all Raspberry Pi models and works on both 32-bit (armhf) and 64-bit (arm64) systems.
+
+Website: https://github.com/bathiatuss/system_analyser
+Support: https://github.com/bathiatuss/system_analyser/issues

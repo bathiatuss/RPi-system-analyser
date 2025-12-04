@@ -1,0 +1,22 @@
+Source: system-analyser
+Section: utils
+Priority: optional
+Maintainer: Atakan B. <atakanbaltac-1@hotmail.com>
+Build-Depends: debhelper (>= 11), libgtk-3-dev, pkg-config, gcc
+Standards-Version: 4.5.0
+Homepage: https://github.com/bathiatuss/system_analyser
+
+Package: system-analyser
+Architecture: armhf arm64
+Depends: ${shlibs:Depends}, ${misc:Depends}, libgtk-3-0
+Description: Lightweight real-time system monitor for Raspberry Pi
+ A GTK3-based monitoring tool displaying CPU usage, temperature, memory,
+ and system metrics with CSV logging capabilities. Open-source and
+ community-driven development.
+ .
+ Features:
+  - Real-time CPU usage and temperature monitoring
+  - Memory and swap usage tracking
+  - System uptime and load average display
+  - CPU clock speed and voltage monitoring
+  - Data logging to CSV files

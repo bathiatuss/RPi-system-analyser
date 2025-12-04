@@ -1,0 +1,82 @@
+# Compiled Object files
+*.o
+*.obj
+
+# Executables
+system-analyser
+main_gui
+system_analyser
+
+# Debian Package Build
+*.deb
+*.buildinfo
+*.changes
+*.ddeb
+debian/system-analyser/
+debian/.debhelper/
+debian/files
+debian/debhelper-build-stamp
+debian/*.substvars
+debian/*.log
+DEBIAN/
+
+# Build directories
+build/
+dist/
+*.build/
+
+# Package artifacts
+*.deb
+*.rpm
+*.tar.gz
+*.zip
+*-dbgsym_*.deb
+
+# Runtime Data
+system_metrics.csv
+*.csv
+*.log
+
+# IDE and Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Build artifacts
+*.a
+*.lib
+*.so
+*.so.*
+
+# Testing artifacts
+test-results/
+coverage/
+*.test
+
+# Backup files
+*.bak
+*.backup
+*.orig
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# Generated files
+src/*.o
+include/*~
+core

@@ -1,0 +1,17 @@
+system-analyser (1.0.1-1) stable; urgency=medium
+
+  * Fix: Remove binary files from git repository
+  * Improve .gitignore to prevent build artifacts in git
+  * Clean repository structure
+
+ -- Atakan B. <atakanbaltac-1@hotmail.com>  Wed, 04 Dec 2025 03:00:00 +0000
+
+system-analyser (1.0.0-1) stable; urgency=medium
+
+  * Initial release
+  * Real-time system monitoring for Raspberry Pi
+  * CPU, memory, and temperature monitoring
+  * GTK3-based graphical interface
+  * CSV data logging support
+
+ -- Atakan B. <atakanbaltac-1@hotmail.com>  Wed, 04 Dec 2025 00:00:00 +0000

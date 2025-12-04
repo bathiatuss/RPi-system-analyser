@@ -1,0 +1,56 @@
+#!/bin/bash
+
+# System Analyser - Pi-Apps Install Script
+# This script installs System Analyser from the latest GitHub release
+
+GITHUB_REPO="bathiatuss/system_analyser"
+APP_NAME="system-analyser"
+
+# Detect architecture
+case "$(dpkg --print-architecture)" in
+  armhf|armv7l)
+    ARCH="armhf"
+    ;;
+  arm64|aarch64)
+    ARCH="arm64"
+    ;;
+  *)
+    error "Unsupported architecture: $(dpkg --print-architecture)"
+    ;;
+esac
+
+echo "Detected architecture: $ARCH"
+
+# Get latest release version
+echo "Fetching latest release information..."
+LATEST_VERSION=$(curl -sL "https://api.github.com/repos/$GITHUB_REPO/releases/latest" | grep '"tag_name"' | sed -E 's/.*"v([^"]+)".*/\1/') || error "Failed to fetch latest release version"
+
+if [ -z "$LATEST_VERSION" ]; then
+  error "Could not determine latest version"
+fi
+
+echo "Latest version: $LATEST_VERSION"
+
+# Download the .deb package
+DEB_FILE="${APP_NAME}_${LATEST_VERSION}-1_${ARCH}.deb"
+DOWNLOAD_URL="https://github.com/$GITHUB_REPO/releases/download/v${LATEST_VERSION}/${DEB_FILE}"
+
+echo "Downloading $DEB_FILE..."
+wget -O "/tmp/${DEB_FILE}" "$DOWNLOAD_URL" || error "Failed to download ${DEB_FILE}"
+
+# Install dependencies first
+echo "Installing dependencies..."
+install_packages libgtk-3-0 pkg-config || exit 1
+
+# Install the .deb package
+echo "Installing System Analyser..."
+sudo dpkg -i "/tmp/${DEB_FILE}" || error "Failed to install ${DEB_FILE}"
+
+# Fix any missing dependencies
+sudo apt-get install -f -y || error "Failed to fix dependencies"
+
+# Clean up
+rm -f "/tmp/${DEB_FILE}"
+
+echo "System Analyser installed successfully!"
+echo "You can launch it from the application menu or by running: system-analyser"
