@@ -3,7 +3,7 @@
 # System Analyser - Pi-Apps Install Script
 # This script installs System Analyser from the latest GitHub release
 
-GITHUB_REPO="bathiatuss/system_analyser"
+GITHUB_REPO="bathiatuss/RPi-system-analyser"
 APP_NAME="system-analyser"
 
 # Detect architecture
